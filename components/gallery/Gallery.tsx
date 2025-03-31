@@ -33,7 +33,7 @@ const Gallery = ({tabs, images, defaultTag, height}: {
     height?: string
 }) => {
 
-    const [activeTab, setActiveTab] = React.useState(defaultTag);
+    const [activeTab, setActiveTab] = React.useState<string | undefined>(defaultTag);
     const [openSlider, setOpenSlider] = React.useState(false);
     const [initialIndex, setInitialIndex] = React.useState(0);
 
@@ -54,7 +54,7 @@ const Gallery = ({tabs, images, defaultTag, height}: {
       setInitialIndex(imageId);
       setOpenSlider(true)
     }
-    const filteredImages = activeTab === 'all' ? images : images.filter((image: { tag: string | string[]; }) => image?.tag.includes(activeTab))
+    const filteredImages = activeTab === 'all' ? images : images.filter((image: { tag: string | string[]; }) => image?.tag.includes(typeof activeTab === "string" ? activeTab :''))
 
     return (
         <section id={'gallery'} className={style.gallery}>
