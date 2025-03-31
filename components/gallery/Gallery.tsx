@@ -54,7 +54,7 @@ const Gallery = ({tabs, images, defaultTag, height}: {
       setInitialIndex(imageId);
       setOpenSlider(true)
     }
-    const filteredImages = activeTab === 'all' ? images : images.filter((image: { tag: string | string[]; }) => image.tag.includes(activeTab))
+    const filteredImages = activeTab === 'all' ? images : images.filter((image: { tag: string | string[]; }) => image?.tag.includes(activeTab))
 
     return (
         <section id={'gallery'} className={style.gallery}>
