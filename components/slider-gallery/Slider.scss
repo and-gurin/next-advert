@@ -1,0 +1,77 @@
+@import 'styles/constants';
+@import 'styles/mixins';
+
+.darkBG {
+  background-color: gray;
+  width: 100vw;
+  height: 100vh;
+  z-index: 11;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: fixed;
+}
+
+.centered {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 17;
+}
+
+.paging__figure_kitchen {
+  position: relative;
+  height: 100vh;
+
+  @include media-tablet {
+    height: 50vh;
+  }
+}
+
+.paging__figure_wardrobe {
+  position: relative;
+  height: 100vh;
+
+  @include media-tablet {
+    height: 90vh;
+  }
+}
+
+.paging__image {
+  object-fit: cover;
+}
+
+.sliderGallery {
+  .slick-list {
+    width: 50vw;
+    overflow: hidden;
+
+    @include media-tablet {
+      width: 100vw;
+    }
+  }
+
+  .slick-prev,
+  .slick-next {
+    font-size: 40px;
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    z-index: 1;
+  }
+
+  .slick-prev:before,
+  .slick-next:before {
+    font-size: 40px;
+  }
+
+  .slick-prev {
+    left: 2vw;
+  }
+
+  .slick-next {
+    right: 2vw;
+  }
+}
+

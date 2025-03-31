@@ -1,0 +1,81 @@
+@import 'styles/constants';
+@import 'styles/mixins';
+
+.slogan {
+  margin: 116px 8px 16px 8px;
+
+  @include media-tablet {
+    margin: 89px 8px 32px 8px;
+  }
+
+  &__wrapper {
+    border-radius: 24px 24px 24px 24px;
+    background-color: $whiteSmoke;
+    padding: 40px;
+
+    @include media-laptop {
+      padding: 16px;
+    }
+
+    @include media-mobile {
+      border-radius: 12px;
+    }
+  }
+
+  &__grid {
+    grid-gap: 12px;
+    grid-template-rows: auto auto;
+    grid-template-columns: 1fr 3fr;
+    grid-auto-columns: 1fr;
+    display: grid;
+    margin-bottom: 32px;
+
+    @include media-tablet {
+      grid-template-columns: 1fr;
+    }
+
+    @include media-mobile {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__material {
+    padding-top: 32px;
+    border: solid 1px olivedrab;
+  }
+
+  &__image {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  }
+
+  &__figure {
+    width: 100%;
+    height: 220px;
+    border-radius: 8px;
+    margin-bottom: 22px;
+
+    @include media-mobile {
+      border-radius: 4px;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+
+
+    @include media-mobile {
+      border-radius: 4px;
+    }
+  }
+
+  &__title {
+    font-weight: 400;
+    margin-bottom: 32px;
+    font-size: 16px;
+    text-align: center;
+  }
+}

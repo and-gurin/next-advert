@@ -1,0 +1,148 @@
+@import 'styles/mixins';
+
+.header {
+  background: $whiteColor;
+  -moz-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+  -webkit-box-shadow: 5px 0 15px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.35);
+  padding: 26px 20px;
+  position: fixed;
+  top: 0;
+  bottom: auto;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  margin: 8px 8px 100px 8px;
+  border-radius: 12px;
+
+  @include media-laptop {
+    padding: 16px 12px;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__navigation {
+    @include flex( $gap:20px);
+
+    @include media-laptop {
+      display: none;
+    }
+
+    &_burger{
+      @include flex($flexDirection: column, $gap:20px, $align: flex-start, $justify: flex-start,);
+      margin: 20px 0 20px 10px;
+    }
+  }
+
+  &__products {
+    @include flex( $gap:5px);
+    cursor: pointer;
+  }
+
+  &__arrow {
+    transform: rotate(180deg);
+    transition: transform 500ms ease;
+
+    &_up {
+      transition: transform 500ms ease;
+    }
+  }
+
+  &__links {
+    @include flex( $gap:20px);
+
+    &_burger {
+      @include flex($flexDirection: column, $gap:20px, $align: flex-start,);
+    }
+  }
+
+  &__burger {
+    display: none;
+
+    @include media-laptop {
+      display: flex;
+    }
+  }
+
+  &__horizontalLLine {
+    height: 1px;
+    background-color: $blackColor;
+    text-align: center;
+  }
+
+  &__arrowLeft {
+    display: flex;
+    align-items: center;
+  }
+
+  &__flag {
+    margin-right: 20px;
+    margin-left: auto;
+  }
+
+  &__phone {
+    margin-right: 20px;
+    display: flex;
+    gap: 10px;
+  }
+
+  &__bottomMenu {
+    background-color: $whiteColor;
+    border-radius: 0 0 12px 12px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: auto;
+    display: none;
+    transition: all 0.3s ease-out;
+    z-index: 14;
+    padding: 13px 20px;
+
+    &_active {
+      transition: all 0.3s ease-out;
+      grid-column-gap: 12px;
+      grid-template-columns: 1fr 1fr 1fr 1fr ;
+      display: grid;
+    }
+
+    &_burger {
+      transition: all 0.3s ease-out;
+      grid-row-gap: 12px;
+      grid-template-columns: 1fr;
+      display: grid;
+    }
+  }
+
+  &__categories {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  &__category {
+    transition:  500ms ease;
+
+    &:hover {
+      text-decoration: underline;
+      transition:  500ms ease;
+    }
+  }
+
+  &__figure {
+    width: 100%;
+    height: 240px;
+    border-radius: 12px;
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+  }
+}
