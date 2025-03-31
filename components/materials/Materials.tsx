@@ -52,7 +52,7 @@ export const Material = ({title, materials, href}: {
             : style.collection__grid_advantages
             }>
                 {materials.map((material) => {
-                    return (<div className={
+                    return (<div key={material.title} className={
                             title === 'partners' ? style.collection__material_partners
                                 : style.collection__material
                     }>
