@@ -114,7 +114,7 @@ export default function Home() {
             <Materials title={'advantages'} materials={advantages}/>
             <Promotion/>
             <Materials href={'services'} title={'leistungen'} materials={leistungen}/>
-            <Gallery images={images} tabs={tabs} defaultTag={'all'}/>
+            <Gallery height={''} images={images} tabs={tabs} defaultTag={'all'}/>
             <Form/>
             <Materials href={'team'} title={'partners'} materials={partners}/>
         </>
